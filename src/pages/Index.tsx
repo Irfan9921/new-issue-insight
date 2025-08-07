@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import IPOTable from '@/components/IPOTable';
+import GMPTracker from '@/components/GMPTracker';
+import NewsSection from '@/components/NewsSection';
+import NewsletterSection from '@/components/NewsletterSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroSection />
+        
+        {/* IPO Tables Section */}
+        <section className="py-16">
+          <div className="container space-y-12">
+            <IPOTable title="Upcoming Mainboard IPOs" category="mainboard" />
+            <IPOTable title="Active SME IPOs" category="sme" />
+          </div>
+        </section>
+
+        <GMPTracker />
+        <NewsSection />
+        <NewsletterSection />
+      </main>
+      <Footer />
     </div>
   );
 };
